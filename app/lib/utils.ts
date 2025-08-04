@@ -1,9 +1,10 @@
-/**
- * Formats a file size in bytes to a human-readable string (KB, MB, GB)
- * @param bytes - The size in bytes to format
- * @param decimals - Number of decimal places to include (default: 2)
- * @returns A formatted string representing the size with appropriate unit
- */
+import { type ClassValue, clsx } from 'clsx';
+import { twMerge } from 'tailwind-merge';
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(...clsx(inputs))
+}
+
 export function formatSize(bytes: number, decimals: number = 2): string {
   if (bytes === 0) return '0 Bytes';
 
